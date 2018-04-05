@@ -15,7 +15,7 @@ def save_file(mov, name):
     
     # initialize a video writer
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
-    out = cv2.VideoWriter(filename, fourcc, 20.0, (cols, rows))
+    out = cv2.VideoWriter(filename, fourcc, 30.0, (cols, rows))
 
     for i in range(0, len(mov)):
         # write to the file
