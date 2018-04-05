@@ -5,6 +5,7 @@ from load_film import load_film
 from rigid_estimation import rigid_estimation, remap_rigid_transform
 from trajectory import get_smooth_trajectory
 from stabilize import stabilize
+from save_file import save_file
 
 if __name__ == "__main__":
     import sys
@@ -38,3 +39,14 @@ if __name__ == "__main__":
     print "Stabilizing film..."
     stabilized, compare = stabilize(mov, new_transforms)
 
+    print "Saving comparison video..."
+    save_file(compare, "ComparisonVideo.avi")
+    print "Done"
+
+    print "Saving original video..."
+    save_file(mov, "OriginalVideo.avi")
+    print "Done"
+    
+    print "Saving stabilized video..."
+    save_file(stabilized, "StabilizedVideo.avi")
+    print "Done"
