@@ -4,6 +4,7 @@ import cv2
 from load_film import load_film
 from rigid_estimation import rigid_estimation, remap_rigid_transform
 from trajectory import get_smooth_trajectory
+from stabilize import stabilize
 
 if __name__ == "__main__":
     import sys
@@ -34,4 +35,6 @@ if __name__ == "__main__":
     print "Remapping rigid transform..."
     new_transforms = remap_rigid_transform(transforms, trajectories)
     
+    print "Stabilizing film..."
+    stabilized, compare = stabilize(mov, new_transforms)
 
