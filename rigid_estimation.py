@@ -74,3 +74,25 @@ def rigid_estimation(mov):
     print "Done"
     return prev_to_cur_transform
 
+# recompute the transformation between the frames so that it matches the smooth
+# trajectory
+def remap_rigid_transform(transform, trajectories):
+
+    file = open("outputFiles/newOutTransform.txt", "w")
+
+    new_transform = []
+
+    a = 0
+    x = 0
+    y = 0
+
+    # accumulate the frame to frame transform
+    for i in range(0, len(transform)):
+        x += transform[i].dx
+        y += transform[i].dy
+        a += transform[i].da
+
+    file.close()
+    print "Done"
+    return new_transform
+
