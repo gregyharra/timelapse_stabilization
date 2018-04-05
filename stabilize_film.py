@@ -3,6 +3,7 @@ import cv2
 
 from load_film import load_film
 from rigid_estimation import rigid_estimation, remap_rigid_transform
+from trajectory import get_smooth_trajectory
 
 if __name__ == "__main__":
     import sys
@@ -26,3 +27,7 @@ if __name__ == "__main__":
 
     print "Estimating rigid transform..."
     transforms = rigid_estimation(mov)
+
+    print "Estimating trajectory..."
+    trajectories = get_smooth_trajectory(transforms)
+
