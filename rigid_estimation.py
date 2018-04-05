@@ -92,6 +92,21 @@ def remap_rigid_transform(transform, trajectories):
         y += transform[i].dy
         a += transform[i].da
 
+        # look at the difference between the new trajectory and the old one
+        diff_x = trajectories[i].x - x
+        diff_y = trajectories[i].y - y
+        diff_a = trajectories[i].a - a
+
+        # modify the transform according to the difference between the new 
+        # and old trajectory 
+        dx = transform[i].dx + diff_x
+        dy = transform[i].dy + diff_y
+        da = transform[i].da + diff_a
+
+        # save the new transformation parameters
+        new_transform.append(TransformParam(da, dx, dy))
+        file.write(str(i+1) + " " + str(dx) + " " + str(dy) + " " + str(da) + "\n")
+
     file.close()
     print "Done"
     return new_transform
