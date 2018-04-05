@@ -35,5 +35,19 @@ def stabilize(mov, transform, BORDER_CROP = 20):
         T[1, 2] = transform[i].dy
         T = np.asarray(T,dtype=np.float32)
 
+        # apply the transformation to the current frame
+        curTransformed = cv2.warpAffine(cur, T, (cols, rows))
+
+        # crop the image to remove a maximum of the black border that can when
+        # applying the transform
+        curTransformed = curTransformed[VERTICAL_BORDER:rows-VERTICAL_BORDER, BORDER_CROP:cols-BORDER_CROP]
+        curTransformed = cv2.resize(curTransformed, (cols, rows))
+
+        # save the rectified frame
+        stabalized.append(curTransformed)
+
+        canvas = np.concatenate((cur, curTransformed), axis=1)
+        compare.append(canvas)
+
     print "Done"
     return stabalized, compare
