@@ -2,6 +2,7 @@ import numpy as np
 import cv2
 
 from load_film import load_film
+from rigid_estimation import rigid_estimation, remap_rigid_transform
 
 if __name__ == "__main__":
     import sys
@@ -23,3 +24,5 @@ if __name__ == "__main__":
     print "Loading film..."
     mov = load_film(path, timelapse)
 
+    print "Estimating rigid transform..."
+    transforms = rigid_estimation(mov)
