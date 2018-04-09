@@ -1,13 +1,15 @@
 import numpy as np
 import cv2
 
+import sys
+
 # load film
 def load_film(path, timelapse):
     cap = cv2.VideoCapture(path)
 
     if not (cap.isOpened()):
-        print "unable to open file: " + path
-        return
+        print "Unable to open file: " + path
+        sys.exit(-20);
 
     output = []
     
