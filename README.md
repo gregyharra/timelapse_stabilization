@@ -79,7 +79,7 @@ make -j8
 sudo make install
 ```
 
-## Main Project
+# Main Project
 
 Once the libraries have been download and installed, you are now able to run the project:
 
@@ -96,6 +96,6 @@ On the other hand, if you want to create a timelapse and stablize it without, pl
 python stabilize_film.py <path/to/film> true
 ```
 
-# Mosaic
+## Mosaic
 
 The mosaic aspect is yet to be implemented and will be just a side project that will be implemented in the near future
