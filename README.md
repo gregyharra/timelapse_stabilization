@@ -83,14 +83,19 @@ sudo make install
 
 Once the libraries have been download and installed, you are now able to run the project:
 
-To run the timelapse stabilization algorithm on a video and create a timelapse video from it, simply run:
+To run the timelapse stabilization algorithm on a video or an already existing timelapse, simply run:
 
 ```terminal
 python stabilize_film.py <path/to/film>
 ```
 
-On the other hand, if you want to stabilize an already existing timelapse or to stablize a video without creating a timelapse, please run:
+To run the timelapse stabilization algorithm on a video and create a timelapse video from it, simply run:
+On the other hand, if you want to create a timelapse and stablize it without, please run:
 
 ```terminal
 python stabilize_film.py <path/to/film> true
 ```
+
+# Mosaic
+
+The mosaic aspect is yet to be implemented and will be just a side project that will be implemented in the near future

@@ -20,9 +20,9 @@ if __name__ == "__main__":
     path = sys.argv[1]
 
     if len(sys.argv) == 2:
-        timelapse = True
-    else:
         timelapse = False
+    else:
+        timelapse = True
 
     print "Loading film..."
     mov = load_film(path, timelapse)
