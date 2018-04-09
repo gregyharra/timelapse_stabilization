@@ -93,8 +93,10 @@ To run the timelapse stabilization algorithm on a video and create a timelapse v
 On the other hand, if you want to create a timelapse and stablize it without, please run:
 
 ```terminal
-python stabilize_film.py <path/to/film> true
+python stabilize_film.py <path/to/film> <random/value>
 ```
+
+Running the algorithm with a 3rd argument will automatically create a timelapse from the inputted video.
 
 ## Mosaic
 
