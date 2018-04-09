@@ -51,7 +51,7 @@ def rigid_estimation(mov):
 
         # in the rare case that no transformation were found, use the 
         # previously known transform
-        if (T.size == 0):
+        if (T is None):
             T = last_T
 
         last_T = T
